@@ -1,0 +1,28 @@
+.container {
+    background-color: rgb(20, 44, 65);
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center;
+    color: #000000;
+}
+
+@media (max-width: 600px) {
+    .container {
+        display: block;
+        padding: 10px;
+    }
+
+    .row{
+        width: 100%;
+        margin: 5px 0;
+    }
+}
