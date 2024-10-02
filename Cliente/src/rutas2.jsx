@@ -11,9 +11,9 @@ const Rutas2 = createBrowserRouter([
     element: <Estructura />,
     children: [
       { path: "/", element: <Inicio /> },
-      { path: "/Acerca", element: <AcercaDe /> },
-      { path: "/Registro", element: <Registro />},
-      { path: "/Herramientas", element: <Herramientas /> },
+      { path: "Acerca", element: <AcercaDe /> },
+      { path: "Registro", element: <Registro />},
+      { path: "Herramientas", element: <Herramientas /> },
       
     ],
   },

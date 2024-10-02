@@ -1,15 +1,15 @@
 import Contador from "../componentes/Contador.jsx";
-import BarraNav from  "../componentes/barraNav.jsx";
+import BarraNav from "../componentes/barraNav.jsx";
+import { Button } from 'react-bootstrap';
+import Grid from "../componentes/EjemploGrid.jsx";
+import FormularioReact from "../componentes/EjemploFormulario.jsx";
+import EjemploNav from "../componentes/EjemploNav.jsx";
+import Columna from "../componentes/EjemploColumna.jsx";
 function Herramientas() {
     return (
-        <>      
-        <h1>Herramientas</h1>
-            <Contador />
-            <Contador
-                inicial={5}
-                incremento={3}
-                decremento={2}
-            />
+        <>           
+                
+         <EjemploNav/>   
         </>
     );
 }

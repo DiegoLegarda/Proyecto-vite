@@ -1,4 +1,5 @@
-import React,{useState} from "react";
+import {useState} from "react";
+import { Button } from "react-bootstrap"; 
 
 function Contador(props){
     const { inicial = 0, incremento = 1, decremento=1 } = props;
@@ -15,8 +16,8 @@ function Contador(props){
     return(
         <div className="Contador">
             <h1>Contador: {contador}</h1>
-            <button onClick={incrementar}>Incrementar</button>
-            <button onClick={decrementar}>Decrementar</button>
+            <Button variant='primary' onClick={incrementar}>Incrementar</Button>
+            <Button onClick={decrementar}>Decrementar</Button>
         </div>
     );
 
