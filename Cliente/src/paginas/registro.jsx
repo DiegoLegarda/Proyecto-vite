@@ -4,7 +4,7 @@ import BarraNav from  "../componentes/barraNav.jsx";
 import ManejoFormulario2 from '../componentes/manejoFormulario2';
 function Registro(){
     return(
-        <div>        
+        <div className="container mx-auto px-4">        
             <h1>Registro</h1>
             <ManejoFormulario/>
         </div>

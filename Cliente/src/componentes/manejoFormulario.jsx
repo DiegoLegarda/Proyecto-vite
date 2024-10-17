@@ -39,34 +39,37 @@ function ManejoFormulario() {
 
     return (
         <form onSubmit={manejoSumision}>
-            <label>
-                Ingrese nombre:
+            <div className="container mx-auto p-13">
                 <input
                     type="text"
                     name="nombre"
                     value={datosForm.nombre || ""}
                     onChange={manejoCambios}
+                    placeholder="Ingrese el nombre"
+                    className="input input-bordered w-full max-w-xs"
                 />
-            </label>
+            
             <br />
-            <label>
-                Ingrese correo:
+            
                 <input
                     type="mail"
                     name="correo"
                     value={datosForm.correo || ""}
                     onChange={manejoCambios}
+                    placeholder="Ingrese su correo"
+                    className="input input-bordered w-full max-w-xs"
                 />
-            </label>
-            <label>
-                Ingrese contraseña:
+            
+            
                 <input
                     type="password"
                     name="contraseña"
                     value={datosForm.contraseña || ""}
                     onChange={manejoCambios}
+                    placeholder="Ingrese contraseña"
+                    className="input input-bordered w-full max-w-xs"
                 />
-            </label>
+          
             <br />
             <button type="submit" disabled={enviando}>
                 {enviando ? 'Enviando...' : 'Enviar'}
@@ -80,6 +83,7 @@ function ManejoFormulario() {
                 </div>
             )}
             {error && <p style={{ color: 'red' }}>{error}</p>}
+            </div>
         </form>
     )
 }
