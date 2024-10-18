@@ -5,11 +5,13 @@ import Grid from "../componentes/EjemploGrid.jsx";
 import FormularioReact from "../componentes/EjemploFormulario.jsx";
 import EjemploNav from "../componentes/EjemploNav.jsx";
 import Columna from "../componentes/EjemploColumna.jsx";
+import FormLogin from "../componentes/FormLogin.jsx";
+
 function Herramientas() {
     return (
-        <>           
+        <>  
                 
-         <EjemploNav/>   
+         <FormLogin/>   
         </>
     );
 }
