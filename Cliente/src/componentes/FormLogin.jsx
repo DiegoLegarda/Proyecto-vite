@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 
 function FormLogin({ onLogin }) {
     const [username, setUsername] = useState('');
@@ -8,13 +10,16 @@ function FormLogin({ onLogin }) {
     const [error, setError] = useState(null);
     const [LoginExitoso, setLoginExitoso] = useState(false);
     const [rol, setRol]=useState("");
+    const navigate = useNavigate();
+
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
 
             const response = await axios.post(
-                'http://localhost:3000/api/login',
+                'http://localhost:3000/api/login/token',
                 { username, password },
                 { withCredentials: true }
             );
@@ -22,9 +27,13 @@ function FormLogin({ onLogin }) {
             console.log(response);
             console.log(rol);
             console.log(response.data.message);
-            console.log(response.data.username);
+            console.log(response.data.token);
+            localStorage.setItem('token', response.data.token);
+            localStorage.setItem('role', response.data.rol); 
+            console.log(localStorage.getItem('token')); 
             setLoginExitoso(true);
-
+            navigate('/BaseDatos'); 
+               
         } catch (error) {
             setLoginExitoso(false);
             if (error.response && error.response.status === 401) {

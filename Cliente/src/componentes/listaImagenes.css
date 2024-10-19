@@ -1,0 +1,23 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+}
+
+.grid-item {
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    padding: 8px; 
+    text-align: center; 
+    cursor: pointer; 
+    transition: transform 0.2s; 
+}
+
+.grid-item:hover {
+    transform: scale(1.05); 
+}
+
+.grid-item img {
+    width: 100%; 
+    height: auto; 
+    border-radius: 4px; 
+}
