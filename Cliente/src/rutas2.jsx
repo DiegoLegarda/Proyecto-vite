@@ -19,7 +19,7 @@ const Rutas2 = createBrowserRouter([
       { path: "/", element: <Inicio /> },
       { path: "Acerca", element: <AcercaDe /> },
       { path: "Registro", element: <Registro />},
-      { path: "Herramientas", element: <Herramientas /> },
+      { path: "Ingreso", element: <Herramientas /> },
       { path: "BaseDatos", element:<ProtectorRutas><BaseDatos/></ProtectorRutas> },
       
     ],

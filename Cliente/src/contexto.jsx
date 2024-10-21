@@ -5,20 +5,20 @@ export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useState({
     token: localStorage.getItem('token'),
-    role: localStorage.getItem('role')
+    rol: localStorage.getItem('rol')
   });
 
-  const login = (token, role) => {
+  const login = (token, rol) => {
     localStorage.setItem('token', token);
-    localStorage.setItem('role', role);
-    setAuth({ token: token, role: role });
+    localStorage.setItem('rol', rol);
+    setAuth({ token: token, rol: rol });
     console.log("Autenticacion efectuada");
   };
 
   const logout = () => {
     setAuth({ token: null, role: null });
     localStorage.removeItem('token');
-    localStorage.removeItem('role');
+    localStorage.removeItem('rol');
   };
 
   return (

@@ -9,8 +9,7 @@ import FormLogin from "../componentes/FormLogin.jsx";
 
 function Herramientas() {
     return (
-        <>  
-                
+        <>                  
          <FormLogin/>   
         </>
     );

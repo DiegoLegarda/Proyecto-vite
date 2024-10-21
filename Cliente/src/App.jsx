@@ -14,11 +14,7 @@ function App() {
   return (
     <>
     <AuthProvider>
-       <RouterProvider router={Rutas2} />
-      {/* <BrowserRouter>
-        <BarraNavegacion />
-        <Rutas />
-      </BrowserRouter> */}
+       <RouterProvider router={Rutas2} />     
       </AuthProvider>
     </>
   )

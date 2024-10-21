@@ -29,7 +29,7 @@ function FormLogin({ onLogin }) {
             console.log(response.data.message);
             console.log(response.data.token);
             localStorage.setItem('token', response.data.token);
-            localStorage.setItem('role', response.data.rol); 
+            localStorage.setItem('rol', response.data.rol); 
             console.log(localStorage.getItem('token')); 
             setLoginExitoso(true);
             navigate('/BaseDatos'); 

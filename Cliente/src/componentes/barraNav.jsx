@@ -1,26 +1,22 @@
-//barra de navegacion en el proyecto
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav } from 'react-bootstrap';
 
-
-
-function BarraNavegacion() {
+function BarraTailwind() {
   return (
-    <Navbar bg="light" expand="lg">
-        <Navbar.Brand as={Link} to="/">Home</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link as={Link} to='/'>Inicio</Nav.Link>
-            <Nav.Link as={Link} to='/Registro'>Registro</Nav.Link>
-            <Nav.Link as={Link} to='/Acerca'>Acerca de</Nav.Link>
-            <Nav.Link as={Link} to='/Herramientas'>Herramientas</Nav.Link>
-            
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+    <div className="navbar bg-base-100">
+      <div className="navbar-start">
+        <Link to="/" className="btn btn-ghost normal-case text-xl">Inicio</Link>
+      </div>
+      <div className="navbar-center hidden lg:flex">
+        <ul className="menu menu-horizontal p-0">
+          <li><Link to="/">Inicio</Link></li>
+          <li><Link to="/Acerca">Acerca de</Link></li>
+          <li><Link to="/Registro">Registro</Link></li>
+          <li><Link to="/Ingreso">Ingreso</Link></li>
+        </ul>
+      </div>
+    </div>
   );
 }
 
-export default BarraNavegacion;
+export default BarraTailwind;
