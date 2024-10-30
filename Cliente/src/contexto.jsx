@@ -19,6 +19,7 @@ export const AuthProvider = ({ children }) => {
     setAuth({ token: null, role: null });
     localStorage.removeItem('token');
     localStorage.removeItem('rol');
+    console.log("Cierre de sesion");   
   };
 
   return (
