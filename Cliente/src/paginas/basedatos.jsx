@@ -1,12 +1,23 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { AuthContext } from '../contexto';
 import ImagenForm from '../componentes/imagenForm';
 import ListaImagenes from '../componentes/listaImagenes';
 import CambiarNombreImagen from '../componentes/cambiarNombreImagen';
+import axios from 'axios';
 
 const BaseDatos = () => {
     const { auth, logout } = useContext(AuthContext);
     const [imagenSeleccionada, setImagenSeleccionada] = useState(null);
+    useEffect(() => {
+        if (auth?.token) {
+            axios.get('/api/images', {
+                headers: { Authorization: `Bearer ${auth.token}` },
+            })
+                .then(response => {
+                    console.log('Imágenes:', response.data);
+                });
+        }
+    }, [auth]);
     return (
         <div className="container">
             <h1>Base de datos</h1>

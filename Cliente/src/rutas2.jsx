@@ -7,7 +7,7 @@ import Estructura from './paginas/estructura.jsx';
 import BaseDatos from './paginas/basedatos.jsx';
 import ProtectorRutas from './componentes/protectorRutas.jsx';
 
-//import contexto from './contexto.jsx';
+
 
 const Rutas2 = createBrowserRouter([
   {

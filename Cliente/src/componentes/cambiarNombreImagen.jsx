@@ -15,7 +15,7 @@ const CambiarNombreImagen = ({ imagen }) => {
 
             if (response.status === 200) {
                 alert('Nombre cambiado con éxito');
-                // Aquí puedes refrescar la lista de imágenes o manejar el estado como prefieras
+                
             }
         } catch (error) {
             alert('Error al cambiar el nombre');
