@@ -12,4 +12,7 @@ test('Prueba de renderizado de formulario', () => {
 
     const passwordInput = screen.getByPlaceholderText('Ingrese el nombre');
     expect(passwordInput).toBeInTheDocument();
+
+        
+    
 });

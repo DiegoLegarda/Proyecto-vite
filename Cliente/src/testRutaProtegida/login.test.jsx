@@ -138,4 +138,6 @@ describe('Test de protector de rutas', () => {
         expect(screen.getByText(/contenido protegido/i)).toBeInTheDocument();
     });
 
+    
+
 });

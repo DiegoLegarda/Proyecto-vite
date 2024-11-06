@@ -27,9 +27,11 @@ const FormRegistro = () => {
                 setRegistroExitoso(true);
             })
             .catch((error) => {
-                if (error.response && error.response.data) {
-                    setError(`Error: ${error.response.data.mensaje}`);
+                if (error.response && error.response.data && error.response.data.error) {
+                    // Mostrar el mensaje de error específico del servidor
+                    setError(`Error: ${error.response.data.error}`);
                 } else {
+                    // En caso de que no haya un mensaje de error específico
                     setError(`Error: ${error.message}`);
                 }
                 console.log('Error al enviar el formulario:', error);

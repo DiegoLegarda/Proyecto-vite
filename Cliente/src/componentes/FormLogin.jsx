@@ -32,13 +32,19 @@ function FormLogin({ onLogin }) {
             localStorage.setItem('rol', response.data.rol); 
             console.log(localStorage.getItem('token')); 
             setLoginExitoso(true);
-            navigate('/BaseDatos'); 
+            if (LoginExitoso) {
+                setTimeout(() => {
+                    history.push('/BaseDatos');
+                }, 2000); 
+            } 
                
         } catch (error) {
             setLoginExitoso(false);
             if (error.response && error.response.status === 401) {
+                setError('Credenciales inválidas'); 
                 console.error('Error de autenticación: Credenciales inválidas o no autorizadas.');
             } else {
+                setError('Error al enviar la solicitud'); 
                 console.error('Error al enviar la solicitud:', error.message);
             }
         }

@@ -6,16 +6,16 @@ const CambiarNombreImagen = ({ imagen }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+        const url_servidor="http://localhost:3002"
+        const endpoint = `${url_servidor}/api/imagenes/${imagen._id}`;
         try {
-            const response = await axios.post('/api/imagenes/cambiar-nombre', {
+            const response = await axios.put(endpoint, {
                 nombreActual: imagen.nombre,
-                nuevoNombre,
+                nombre:nuevoNombre+".jpg",
             });
 
             if (response.status === 200) {
-                alert('Nombre cambiado con éxito');
-                
+                alert('Nombre cambiado con éxito');                
             }
         } catch (error) {
             alert('Error al cambiar el nombre');
@@ -26,10 +26,10 @@ const CambiarNombreImagen = ({ imagen }) => {
     return (
         <form onSubmit={handleSubmit}>
             <label>
-                Cambiar nombre para {imagen.nombre}:
+                Cambiar nombre para {imagen.nombre}:               
                 <input
                     type="text"
-                    value={nuevoNombre}
+                value={nuevoNombre||""}
                     onChange={(e) => setNuevoNombre(e.target.value)}
                     required
                 />
