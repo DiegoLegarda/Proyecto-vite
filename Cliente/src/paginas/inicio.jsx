@@ -10,6 +10,7 @@ function pagInicio(){
     return (
         <>        
            <h1>Esta es una pagina de Inicio</h1>
+           <Saludo/>
            <div className="bg-red-500">Esto es un test</div>
            <Carrusel/>
         </>
