@@ -20,7 +20,7 @@ const BaseDatos = () => {
     }, [auth]);
     return (
         <div className="container">
-            <h1>Base de datos con <Imagenes></Imagenes></h1>
+            <h1>Base de datos con Imagenes</h1>
             <div className="row">
                 <div className="col-md-4">
                     <div className="card">
