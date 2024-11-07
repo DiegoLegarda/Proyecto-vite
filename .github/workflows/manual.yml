@@ -31,7 +31,7 @@ jobs:
       # Paso 4: Ejecutar pruebas con Vitest en la carpeta Cliente
       - name: Run Vitest tests
         working-directory: ./Cliente
-        run: npm run test -- --reporter html
+        run: npm run test -- --report html
       - name: Upload test results as artifact
         if: success()
         uses: actions/upload-artifact@v3

@@ -12,14 +12,14 @@ export default defineConfig({
     coverage: {
       provider: 'v8', 
       reporter: ['text', 'html'], 
-      reportsDirectory: './coverage', 
+      reportsDirectory: '../test-results', 
       exclude: ['node_modules/', 'dist/', '**/Cliente/**']
     },
     reporters: ['html'],
     outputFile: {
       //junit: './junit-report.xml',
       //json: './json-report.json',
-      html: './coverage/report.html',
+      html: '../test-results/report.html',
     },
   }
 })
