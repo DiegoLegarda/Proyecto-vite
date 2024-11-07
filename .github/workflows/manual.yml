@@ -31,46 +31,13 @@ jobs:
       # Paso 4: Ejecutar pruebas con Vitest en la carpeta Cliente
       - name: Run Vitest tests
         working-directory: ./Cliente
-        run: npx vitest --coverage --coverage-provider=v8
+        run: npm run test -- --reporter html
       - name: Upload test results as artifact
         if: success()
         uses: actions/upload-artifact@v3
         with:
           name: test-results
-          path: test-results  # Asegúrate de que el reporte de resultados de pruebas esté en esta carpeta o cambia el path según corresponda
+          path: test-results  
 
-      - name: Upload coverage report as artifact
-        if: success()
-        uses: actions/upload-artifact@v3
-        with:
-          name: coverage-report
-          path: coverage/Cliente  # Cambia este path si es necesario. Aquí guardamos los reportes de cobertura HTML
-          
-  deploy:
-    needs: test
-    runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run tests with coverage (optional for GitHub Pages)
-        run: |
-          npx vitest --coverage --coverage-provider=v8
-
-      - name: Deploy to GitHub Pages (optional)
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: coverage/Cliente
-
+      
         
