@@ -35,7 +35,7 @@ describe('Pruebas de Contexto', () => {
         expect(screen.getByText(/Token: test-token/i)).toBeInTheDocument();
         expect(screen.getByText(/Rol: admin/i)).toBeInTheDocument();
     });
-    it('debe eliminar token y rol de localStorage al hacer logout', async () => {
+    it('eliminar token y rol de localStorage al hacer logout', async () => {
 
         localStorage.setItem('token', 'test-token');
         localStorage.setItem('rol', 'admin');
