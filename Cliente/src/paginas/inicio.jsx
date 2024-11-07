@@ -11,7 +11,7 @@ function pagInicio(){
         <>        
            <h1>Esta es una pagina de Inicio</h1>
            <Saludo/>
-           <div className="bg-red-500">Esto es un test</div>
+           <div className="bg-red-500">Esto es un test para prueba de estilo</div>
            <Carrusel/>
         </>
     );

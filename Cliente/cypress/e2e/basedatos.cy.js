@@ -13,16 +13,13 @@ describe('Componente BaseDatos', () => {
 
     it('permitir cambiar el nombre de una imagen seleccionada', () => {
        
-        
         cy.get(':nth-child(1) > img').click();
-
-        
-        
+      
         cy.contains('Cambiar nombre para').should('be.visible');
     });
+    
     it('obtener respuesta de cambio de nombre',()=>{
-        //cy.interceptor(POST,'')
-
+       
         cy.get(':nth-child(1) > img').click();
         cy.get('label > input').type("nuevoNombre")
         cy.get('button').contains('Cambiar nombre').click();

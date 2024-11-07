@@ -5,11 +5,21 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   test: {
-    environment: 'jsdom', 
-    globals: true,        
+    environment: 'jsdom',
+    globals: true,
     setupFiles: './src/setupTests.js',
+    
     coverage: {
-      provider: 'v8' // or 'v8'
-    }, 
+      provider: 'v8', 
+      reporter: ['text', 'html'], 
+      reportsDirectory: './coverage', 
+      exclude: ['node_modules/', 'dist/', '**/Cliente/**']
+    },
+    reporters: ['html'],
+    outputFile: {
+      //junit: './junit-report.xml',
+      //json: './json-report.json',
+      html: './coverage/report.html',
+    },
   }
 })

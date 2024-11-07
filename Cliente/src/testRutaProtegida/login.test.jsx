@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { act, render, screen, waitFor } from '@testing-library/react';
 import { describe, it, vi, expect, beforeEach } from 'vitest';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { AuthProvider, AuthContext } from '../contexto';
@@ -32,7 +32,10 @@ describe('Formulario de Login', () => {
         screen.getByPlaceholderText(/nombre de usuario/i).value = 'usuario';
         screen.getByPlaceholderText(/contraseña/i).value = 'password';
 
-        screen.getByText(/iniciar sesión/i).click();
+        act(()=>{
+            screen.getByText(/iniciar sesión/i).click();
+        });
+        
 
         await waitFor(() => {
             expect(localStorage.getItem('token')).toBe('test-token');

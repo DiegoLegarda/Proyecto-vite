@@ -7,7 +7,7 @@ if lsof -i :5173; then
   kill -9 $(lsof -t -i :5173)
 fi
 npm run dev &  
-#npx cypress open
+
 
 sleep 5
 

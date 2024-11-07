@@ -34,8 +34,8 @@ describe("Formulario de registro", () => {
         cy.get('input[name="password"]').type("123456");
         cy.get('select[name="rol"]').select("Administrador");
         cy.contains('Enviar').click();
-
-
+        
+        //Segundo envio de datos 
         cy.contains('Enviar').click();
         cy.contains('El nombre de usuario ya está en uso ').should('be.visible');
     });
@@ -71,7 +71,7 @@ describe("Formulario de registro", () => {
 
     });
 
-    it("Probar envio incompleto",()=>{
+    it("Prueba de envio incompleto",()=>{
         cy.get('input[name="nombre"]').type("Pedro");
         cy.get('input[name="username"]').type("Pedrito");
         cy.get('input[name="correo"]').type("pedrito@mail.com");

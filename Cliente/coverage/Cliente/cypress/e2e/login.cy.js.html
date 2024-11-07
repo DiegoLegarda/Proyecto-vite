@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for Cliente/src/componentes/Contador2.js</title>
+    <title>Code coverage report for Cliente/cypress/e2e/login.cy.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../index.html">All files</a> / <a href="index.html">Cliente/src/componentes</a> Contador2.js</h1>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">Cliente/cypress/e2e</a> login.cy.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/34</span>
+                <span class='fraction'>0/29</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/34</span>
+                <span class='fraction'>0/29</span>
             </div>
         
             
@@ -91,13 +91,7 @@
 <a name='L26'></a><a href='#L26'>26</a>
 <a name='L27'></a><a href='#L27'>27</a>
 <a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L29'></a><a href='#L29'>29</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -125,54 +119,42 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import React, { useReducer } from 'react';</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span>
+<span class="cstat-no" title="statement not covered" >describe('Pruebas de Autenticación', () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    beforeEach(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        cy.visit('http://localhost:5173/Ingreso');</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >const initialState = { contador: 0 };</span>
+<span class="cstat-no" title="statement not covered" >    });</span>
+<span class="cstat-no" title="statement not covered" >    it('iniciar sesión exitosamente con credenciales válidas', () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >function reducer(state, action) {</span>
-<span class="cstat-no" title="statement not covered" >  switch (action.type) {</span>
-<span class="cstat-no" title="statement not covered" >    case 'incrementar':</span>
-<span class="cstat-no" title="statement not covered" >      return { contador: state.contador + 1 };</span>
-<span class="cstat-no" title="statement not covered" >    case 'decrementar':</span>
-<span class="cstat-no" title="statement not covered" >      return { contador: state.contador - 1 };</span>
-<span class="cstat-no" title="statement not covered" >    case 'reset':</span>
-<span class="cstat-no" title="statement not covered" >      return { contador: 0 };</span>
-<span class="cstat-no" title="statement not covered" >    case 'set':</span>
-<span class="cstat-no" title="statement not covered" >      return { contador: action.value };</span>
-<span class="cstat-no" title="statement not covered" >    default:</span>
-<span class="cstat-no" title="statement not covered" >      throw new Error();</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >        cy.get('input[placeholder="Nombre de usuario"]').type('Bbanano');</span>
+<span class="cstat-no" title="statement not covered" >        cy.get('input[placeholder="Contraseña"]').type('123456789');</span>
+<span class="cstat-no" title="statement not covered" >        cy.get('button').contains('Iniciar sesión').click();</span>
+<span class="cstat-no" title="statement not covered" >        </span>
+<span class="cstat-no" title="statement not covered" >        cy.get('body').then((body) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            console.log(body);</span>
+<span class="cstat-no" title="statement not covered" >        });</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >function Contador2() {</span>
-<span class="cstat-no" title="statement not covered" >  const [state, dispatch] = useReducer(reducer, initialState);</span>
+<span class="cstat-no" title="statement not covered" >        cy.contains('Usuario logeado exitosamente con rol Editor').should('be.visible');</span>
+<span class="cstat-no" title="statement not covered" >    });</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
-<span class="cstat-no" title="statement not covered" >    &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;h1&gt;Contador: {state.contador}&lt;/h1&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;button onClick={() =&gt; dispatch({ type: 'incrementar' })}&gt;Incrementar&lt;/button&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;button onClick={() =&gt; dispatch({ type: 'decrementar' })}&gt;Decrementar&lt;/button&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;button onClick={() =&gt; dispatch({ type: 'reset' })}&gt;Reset&lt;/button&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;button onClick={() =&gt; dispatch({ type: 'set', value: 5 })}&gt;Set 5&lt;/button&gt;</span>
-<span class="cstat-no" title="statement not covered" >    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >    it('mostrar un mensaje de error con credenciales incorrectas', () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >       </span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default Contador2;</span>
-&nbsp;</pre></td></tr></table></pre>
+<span class="cstat-no" title="statement not covered" >        cy.get('input[placeholder="Nombre de usuario"]').type('uuva');</span>
+<span class="cstat-no" title="statement not covered" >        cy.get('input[placeholder="Contraseña"]').type('456878');</span>
+<span class="cstat-no" title="statement not covered" >        cy.get('button').contains('Iniciar sesión').click();</span>
+<span class="cstat-no" title="statement not covered" >       </span>
+<span class="cstat-no" title="statement not covered" >        cy.contains('Credenciales inválidas').should('be.visible');</span>
+<span class="cstat-no" title="statement not covered" >    });</span>
+<span class="cstat-no" title="statement not covered" >});</span></pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-10-30T06:23:54.732Z
+                at 2024-11-07T03:32:42.870Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

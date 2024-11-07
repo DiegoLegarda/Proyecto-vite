@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/32</span>
+                <span class='fraction'>40/40</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>3/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/32</span>
+                <span class='fraction'>40/40</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -94,76 +94,109 @@
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { useContext, useState } from 'react';</span></span></span>
-<span class="cstat-no" title="statement not covered" >import { AuthContext } from '../contexto';</span>
-<span class="cstat-no" title="statement not covered" >import ImagenForm from '../componentes/imagenForm';</span>
-<span class="cstat-no" title="statement not covered" >import ListaImagenes from '../componentes/listaImagenes';</span>
-<span class="cstat-no" title="statement not covered" >import CambiarNombreImagen from '../componentes/cambiarNombreImagen';</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >const BaseDatos = () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const { auth, logout } = useContext(AuthContext);</span>
-<span class="cstat-no" title="statement not covered" >    const [imagenSeleccionada, setImagenSeleccionada] = useState(null);</span>
-<span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className="container"&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;h1&gt;Base de datos&lt;/h1&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className="row"&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className="col-md-4"&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className="card"&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className="card-body"&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;h5 className="card-title"&gt;Base de datos&lt;/h5&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;ImagenForm /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;ListaImagenes setImagenSeleccionada={setImagenSeleccionada} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                {imagenSeleccionada &amp;&amp; &lt;CambiarNombreImagen imagen={imagenSeleccionada} /&gt;}</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;button onClick={logout}&gt;Cerrar sesión&lt;/button&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >    )</span>
-<span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default BaseDatos;</span></pre></td></tr></table></pre>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { useContext, useState, useEffect } from 'react';
+import { AuthContext } from '../contexto';
+import ImagenForm from '../componentes/imagenForm';
+import ListaImagenes from '../componentes/listaImagenes';
+import CambiarNombreImagen from '../componentes/cambiarNombreImagen';
+import axios from 'axios';
+&nbsp;
+const BaseDatos = () =&gt; {
+    const { auth, logout } = useContext(AuthContext);
+    const [imagenSeleccionada, setImagenSeleccionada] = useState(null);
+    useEffect(() =&gt; {
+        if (auth?.token) {
+            axios.get('/api/images', {
+                headers: { Authorization: `Bearer ${auth.token}` },
+            })
+                .then(response =&gt; {
+                    console.log('Imágenes:', response.data);
+                });
+        }
+    }, [auth]);
+    return (
+        &lt;div className="container"&gt;
+            &lt;h1&gt;Base de datos con Imagenes&lt;/h1&gt;
+            &lt;div className="row"&gt;
+                &lt;div className="col-md-4"&gt;
+                    &lt;div className="card"&gt;
+                        &lt;div className="card-body"&gt;
+                            &lt;h5 className="card-title"&gt;Base de datos&lt;/h5&gt;
+                            &lt;ImagenForm /&gt;
+                            &lt;div&gt;
+                                &lt;ListaImagenes setImagenSeleccionada={setImagenSeleccionada} /&gt;
+                                {<span class="branch-0 cbranch-no" title="branch not covered" >imagenSeleccionada &amp;&amp; &lt;CambiarNombreImagen imagen={imagenSeleccionada} /&gt;}</span>
+                            &lt;/div&gt;
+                            &lt;button onClick={logout}&gt;Cerrar sesión&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    )
+}
+&nbsp;
+export default BaseDatos;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-10-30T06:23:54.732Z
+                at 2024-11-07T03:32:42.870Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
