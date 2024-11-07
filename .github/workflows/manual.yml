@@ -32,6 +32,10 @@ jobs:
       - name: Run Vitest tests
         working-directory: ./Cliente
         run: npm run test -- --reporter html
+      - name: Run Vitest tests
+        working-directory: ./Cliente
+        run: npm run coverage -- --reporter html  
+        
       - name: Upload test results as artifact
         if: success()
         uses: actions/upload-artifact@v3
