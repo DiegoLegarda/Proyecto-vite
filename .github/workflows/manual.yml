@@ -32,7 +32,8 @@ jobs:
       - name: Run Vitest tests
         working-directory: ./Cliente
         run: npm run test -- --reporter html
-      - name: Run Vitest tests
+
+      - name: Run Vitest Coverage
         working-directory: ./Cliente
         run: npm run coverage -- --reporter html  
         
