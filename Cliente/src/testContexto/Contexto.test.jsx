@@ -21,7 +21,7 @@ describe('Pruebas de Contexto', () => {
         localStorage.clear();
 
     });
-    it('debe almacenar token y rol en localStorage al hacer login', async () => {
+    it('almacenar token y rol en localStorage al hacer login', async () => {
         render(
             <AuthProvider>
                 <ComponentePruebas />
