@@ -33,7 +33,5 @@ jobs:
 
       - name: Run Cypress tests
         working-directory: Cliente
-        uses: cypress-io/github-action@v6
-        with:
-          config: baseUrl=http://localhost:5173
-          browser: chrome
+        run: npx cypress run --config baseUrl=http://localhost:5173 --browser chrome
+
