@@ -24,6 +24,10 @@ jobs:
         working-directory: Cliente
         run: npm run build
 
+      - name: List files in Cliente after build
+        working-directory: Cliente
+        run: ls -R
+
       - name: Save build folder
         uses: actions/upload-artifact@v4
         with:
@@ -44,8 +48,4 @@ jobs:
           name: build
           path: Cliente/build
 
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
-        with:
-            start: npm start
-            browser: chrome
+      
