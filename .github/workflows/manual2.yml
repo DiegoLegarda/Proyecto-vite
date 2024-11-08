@@ -18,22 +18,22 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'  # Asegúrate de usar la versión correcta de Node.js
+          node-version: '20'  
 
       - name: Install Dependencies
-        working-directory: Cliente  # Ajusta esta ruta según tu estructura
-        run: npm install  # o yarn install o pnpm install
+        working-directory: Cliente  
+        run: npm install  
 
       - name: Start development server
         working-directory: Cliente
-        run: npm run dev &  # Ejecuta el servidor en segundo plano
+        run: npm run dev &  
 
       - name: Wait for server to start
-        run: npx wait-on http://localhost:5173  # Ajusta la URL y el puerto según tu configuración
+        run: npx wait-on http://localhost:5173  
 
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6
         with:
-          start: npm run dev  # Este comando también puede ser necesario si `wait-on` no funciona como espera
-          wait-on: 'http://localhost:5173'  # Espera que el servidor de desarrollo esté disponible antes de ejecutar las pruebas
+          start: npm run dev  
+          wait-on: 'http://localhost:5173'  
           browser: chrome
