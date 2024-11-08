@@ -19,7 +19,7 @@ const ImagenForm = () => {
     formData.append('imagen', file);
     formData.append('nombre','valor');
 
-    const url_servidor = "http://localhost:3002";
+    const url_servidor = "https://servidorimagenes-production.up.railway.app";
     const endpoint = `${url_servidor}/api/imagenes`;
 
     try {

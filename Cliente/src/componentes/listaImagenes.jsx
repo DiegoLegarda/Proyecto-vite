@@ -4,15 +4,18 @@ import './listaImagenes.css';
 
 const ListaImagenes = ({ setImagenSeleccionada }) => {
     const [imagenes, setImagenes] = useState([]);
-    //const url_servidor = "https://servidorimagenes-production.up.railway.app";
-    const url_servidor="http://localhost:3002"
+    const url_servidor = "https://servidorimagenes-production.up.railway.app";
     const endpoint = `${url_servidor}/api/imagenes`;
 
     useEffect(() => {
         const fetchImagenes = async () => {
             
             try {
-                const response = await axios.get(endpoint);
+                const response = await axios.get(endpoint,{
+                    withCredentials: true,
+                }
+                    
+                );
                 setImagenes(response.data);
                 console.log(imagenes);
             } catch (error) {

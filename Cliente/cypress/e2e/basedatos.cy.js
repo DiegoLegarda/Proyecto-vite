@@ -27,7 +27,7 @@ describe('Componente BaseDatos', () => {
         cy.on('window:alert', (alertText) => {            
             expect(alertText).to.equal('Nombre cambiado con éxito');
           });
-        
+          cy.screenshot();
       
     });
 });

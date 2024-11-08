@@ -6,7 +6,7 @@ const CambiarNombreImagen = ({ imagen }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const url_servidor="http://localhost:3002"
+        const url_servidor="https://servidorimagenes-production.up.railway.app";
         const endpoint = `${url_servidor}/api/imagenes/${imagen._id}`;
         try {
             const response = await axios.put(endpoint, {

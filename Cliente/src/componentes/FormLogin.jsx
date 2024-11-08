@@ -31,12 +31,13 @@ function FormLogin({ onLogin }) {
             localStorage.setItem('token', response.data.token);
             localStorage.setItem('rol', response.data.rol); 
             console.log(localStorage.getItem('token')); 
-            setLoginExitoso(true);
+            setLoginExitoso(true);                           
             if (LoginExitoso) {
                 setTimeout(() => {
                     history.push('/BaseDatos');
                 }, 2000); 
-            } 
+            }                
+            
                
         } catch (error) {
             setLoginExitoso(false);
