@@ -37,4 +37,4 @@ wait-on http://localhost:3000 http://localhost:3002 http://localhost:5173
 
 # Iniciar cypress para pruebas
 cd ~/Documentos/Curso\ Full\ Stack\ Intermedio/Proyecto\ vite/Cliente
-npx cypress open
+npx cypress run

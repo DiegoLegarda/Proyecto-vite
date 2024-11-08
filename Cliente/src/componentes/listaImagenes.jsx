@@ -4,7 +4,8 @@ import './listaImagenes.css';
 
 const ListaImagenes = ({ setImagenSeleccionada }) => {
     const [imagenes, setImagenes] = useState([]);
-    const url_servidor = "https://servidorimagenes-production.up.railway.app";
+    //const url_servidor = "https://servidorimagenes-production.up.railway.app";
+    const url_servidor='http://localhost:3002'
     const endpoint = `${url_servidor}/api/imagenes`;
 
     useEffect(() => {
