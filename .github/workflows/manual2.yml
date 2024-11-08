@@ -15,23 +15,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Dependencies in Cliente
+      - name: Install Dependencies
         working-directory: Cliente
         run: npm install
 
-      - name: Build the Project with Vite in Cliente
+      - name: Build Application
         working-directory: Cliente
         run: npm run build
 
-      - name: List all files in Cliente after build
-        run: ls -R Cliente  # List all files in the Cliente directory for debugging
-
-      - name: Save dist folder
+      - name: Save build folder
         uses: actions/upload-artifact@v4
         with:
-          name: dist
+          name: build
           if-no-files-found: error
-          path: Cliente/dist  # Reference the correct output directory for Vite
+          path: Cliente/dist  # Adjusted path to the Vite build output
 
   cypress-run:
     runs-on: ubuntu-22.04
@@ -40,16 +37,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Download the dist folder
+      - name: Download the build folder
         uses: actions/download-artifact@v4
         with:
-          name: dist
+          name: build
           path: Cliente/dist
 
-      - name: Start Server and Run Cypress
+      - name: Start Preview Server
         working-directory: Cliente
+        run: npm run preview &
+        
+      - name: Run Cypress Tests
         uses: cypress-io/github-action@v6
         with:
-          start: npm run preview  # Use preview mode to serve the Vite app
-          wait-on: "http://localhost:4173"  # Default Vite preview port; adjust if necessary
+          start: npm run preview
+          wait-on: "http://localhost:4173"  # Adjust this if using a custom port
           browser: chrome
