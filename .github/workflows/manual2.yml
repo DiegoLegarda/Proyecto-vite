@@ -26,7 +26,7 @@ jobs:
 
       - name: Start development server
         working-directory: Cliente
-        run: npm run dev &  
+        run: npm run dev &
 
       - name: Wait for server to start
         run: npx wait-on http://localhost:5173  
@@ -35,6 +35,5 @@ jobs:
         working-directory: Cliente
         uses: cypress-io/github-action@v6
         with:
-          start: npm run dev  
-          wait-on: 'http://localhost:5173'  
+          config: baseUrl=http://localhost:5173
           browser: chrome
