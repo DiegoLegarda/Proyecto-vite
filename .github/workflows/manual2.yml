@@ -1,4 +1,4 @@
-name: Cypress Tests with Dependency and Artifact Caching
+name: Cypress Tests in Development Environment
 
 on:
   push:
@@ -9,47 +9,31 @@ on:
       - main
 
 jobs:
-  install:
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Install Dependencies
-        working-directory: Cliente
-        run: npm ci  # Uses the lockfile to install exact versions
-
-      - name: Build Application
-        working-directory: Cliente
-        run: npm run build
-
-      - name: Save build folder
-        uses: actions/upload-artifact@v4
-        with:
-          name: build
-          if-no-files-found: error
-          path: Cliente/dist  # Path to Vite build output
-
   cypress-run:
     runs-on: ubuntu-22.04
-    needs: install
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Download the build folder
-        uses: actions/download-artifact@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          name: build
-          path: Cliente/dist
+          node-version: '16'  # Asegúrate de usar la versión correcta de Node.js
 
-      - name: Start Preview Server
+      - name: Install Dependencies
+        working-directory: Cliente  # Ajusta esta ruta según tu estructura
+        run: npm install  # o yarn install o pnpm install
+
+      - name: Start development server
         working-directory: Cliente
-        run: npm run preview &
-        
-      - name: Run Cypress Tests
+        run: npm run dev &  # Ejecuta el servidor en segundo plano
+
+      - name: Wait for server to start
+        run: npx wait-on http://localhost:5173  # Ajusta la URL y el puerto según tu configuración
+
+      - name: Run Cypress tests
         uses: cypress-io/github-action@v6
         with:
-          start: npm run preview
-          wait-on: "http://localhost:4173"  # Adjust if using a custom port
+          start: npm run dev  # Este comando también puede ser necesario si `wait-on` no funciona como espera
+          wait-on: 'http://localhost:5173'  # Espera que el servidor de desarrollo esté disponible antes de ejecutar las pruebas
           browser: chrome
