@@ -17,7 +17,7 @@ jobs:
 
       - name: Install Dependencies
         working-directory: Cliente
-        run: npm install
+        run: npm ci  # Uses the lockfile to install exact versions
 
       - name: Build Application
         working-directory: Cliente
@@ -28,7 +28,7 @@ jobs:
         with:
           name: build
           if-no-files-found: error
-          path: Cliente/dist  # Adjusted path to the Vite build output
+          path: Cliente/dist  # Path to Vite build output
 
   cypress-run:
     runs-on: ubuntu-22.04
@@ -51,5 +51,5 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           start: npm run preview
-          wait-on: "http://localhost:4173"  # Adjust this if using a custom port
+          wait-on: "http://localhost:4173"  # Adjust if using a custom port
           browser: chrome
