@@ -15,20 +15,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Cypress install
-        uses: cypress-io/github-action@v6
-        
-        with:
-          # Disable running of tests within install job
-          runTests: false
-          build: npm run build
+      - name: Navigate to Cliente and Install Dependencies
+        working-directory: Cliente
+        run: |
+          npm install
+
+      - name: Build the Project
+        working-directory: Cliente
+        run: npm run build
 
       - name: Save build folder
         uses: actions/upload-artifact@v4
         with:
           name: build
           if-no-files-found: error
-          path: build
+          path: Cliente/build
 
   cypress-run:
     runs-on: ubuntu-22.04
@@ -41,10 +42,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build
-          path: build
+          path: Cliente/build
 
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          start: npm start
-          browser: chrome
+            start: npm start
+            browser: chrome
