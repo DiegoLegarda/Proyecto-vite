@@ -1,12 +1,11 @@
 describe('Componente BaseDatos', () => {
     beforeEach(() => {
-        cy.login(); 
+        cy.login();       
         cy.visit('http://localhost:5173/BaseDatos');
     });
 
     it('cargar y mostrar las imágenes correctamente', () => {
-   
-       
+        
         cy.contains('Lista de Imágenes').should('be.visible');
         
     });

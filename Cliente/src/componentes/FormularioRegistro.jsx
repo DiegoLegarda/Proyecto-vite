@@ -14,13 +14,17 @@ const FormRegistro = () => {
     };
     // Lista de roles predefinidos
     const roles = ['Administrador', 'Usuario', 'Editor', 'Supervisor'];
-    const URL = 'http://localhost:3000/api/Username/registro';
+    const url_servidor = "https://servidorejemplo-production.up.railway.app";
+    //const url_servidor='http://localhost:3000'
+    const endpoint = `${url_servidor}/api/Username/registro`;
+    
+    
     const manejoSumision = (e) => {
         e.preventDefault();
         if (enviando) return;
         setEnviando(true);
         console.log(datosForm);
-        axios.post(URL, datosForm)
+        axios.post(endpoint, datosForm)
             .then((response) => {
                 setDatos(response.data);
                 console.log(datos);

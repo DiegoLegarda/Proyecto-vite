@@ -13,6 +13,8 @@ node_modules
 test-results
 dist
 dist-ssr
+.env.development
+.env.production
 *.local
 
 # Editor directories and files

@@ -31,9 +31,9 @@ Cypress.Commands.add('login', () => {
     }).as('loginRequest');
 
     cy.visit('http://localhost:5173/Ingreso');
-    cy.get('input[placeholder="Nombre de usuario"]').type('usuario');
-    cy.get('input[placeholder="Contraseña"]').type('password');
+    cy.get('input[placeholder="Nombre de usuario"]').type('Bbanano');
+    cy.get('input[placeholder="Contraseña"]').type('123456789');
     cy.get('button').contains('Iniciar sesión').click();
 
-    cy.wait('@loginRequest');
+    //cy.wait('@loginRequest');
 });

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 
+
 function FormLogin({ onLogin }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -15,11 +16,16 @@ function FormLogin({ onLogin }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+        const url_servidor = import.meta.env.VITE_URL_SERVIDOR_EJEMPLO;
+        console.log(url_servidor);
+        console.log(import.meta.env);
+        //const url_servidor="https://servidorejemplo-production.up.railway.app";
+        //const url_servidor='http://localhost:3002'
+        const endpoint = `${url_servidor}/api/login/token`;
         try {
-
+            
             const response = await axios.post(
-                'http://localhost:3000/api/login/token',
+                endpoint,
                 { username, password },
                 { withCredentials: true }
             );
@@ -32,11 +38,7 @@ function FormLogin({ onLogin }) {
             localStorage.setItem('rol', response.data.rol); 
             console.log(localStorage.getItem('token')); 
             setLoginExitoso(true);                           
-            if (LoginExitoso) {
-                setTimeout(() => {
-                    history.push('/BaseDatos');
-                }, 2000); 
-            }                
+            navigate('/BaseDatos');              
             
                
         } catch (error) {
