@@ -6,7 +6,7 @@ const ProtectorRuta= ({ children }) => {
   const { auth } = useContext(AuthContext);
 
   if (!auth.token) {
-    return <Navigate to="/Ingreso" />;
+    return <Navigate to="Ingreso" />;
   }
 
   return children;
