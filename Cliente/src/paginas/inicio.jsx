@@ -12,8 +12,7 @@ function pagInicio(){
            <h1>Esta es una pagina de Inicio</h1>
 
            <Saludo/>
-           aqui se presenta un componente de saludo
-           <div className="bg-red-500">Esto es un test para prueba de estilo</div>
+                <div className="bg-red-500">Esto es un test para prueba de estilo</div>
            <Carrusel/>
         </>
     );
